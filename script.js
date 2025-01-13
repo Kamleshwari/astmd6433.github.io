@@ -12,7 +12,7 @@ let severityLevels = [];
 
 distressTypes = [
         "1-Transverse cracking",
-        "2-Block cracking",
+        "2-Block Cracking", // Correct capitalization
         "3-Edge cracking",
         "4-Potholes",
         "5-Rutting",
@@ -72,7 +72,7 @@ function addRow() {
     distressTypes.forEach(type => {
         const option = document.createElement('option');
         option.value = type.trim();
-        option.textContent = type.trim();
+        option.textContent = type.trim(); // Ensure trimming
         distressSelect.appendChild(option);
     });
     //distressSelect.onchange = calculateTotal; // Recalculate when dropdown changes
@@ -179,35 +179,35 @@ function ReadCurveData() {
             { Density: 90.00, L: 72.07, M: 83.05, H: 100.00 },
             { Density: 100.00, L: 74.86, M: 84.17, H: 100.00 }
         ],
-        "2-Block cracking": [
-            { Density: 0.1, L: 5.06, M: 7.88, H: 9.93 },
-            { Density: 0.2, L: 5.24, M: 8.07, H: 11.42 },
-            { Density: 0.3, L: 5.62, M: 8.44, H: 12.55 },
-            { Density: 0.4, L: 6.18, M: 9.01, H: 13.86 },
-            { Density: 0.5, L: 6.55, M: 9.38, H: 14.98 },
-            { Density: 0.6, L: 6.74, M: 9.94, H: 16.1 },
-            { Density: 0.7, L: 7.12, M: 10.32, H: 16.67 },
-            { Density: 0.8, L: 7.3, M: 10.69, H: 17.98 },
-            { Density: 0.9, L: 7.49, M: 11.26, H: 18.54 },
-            { Density: 1.0, L: 7.68, M: 11.63, H: 19.1 },
-            { Density: 2.0, L: 9.36, M: 14.26, H: 24.53 },
-            { Density: 3.0, L: 10.86, M: 16.14, H: 28.28 },
-            { Density: 4.0, L: 12.17, M: 17.82, H: 31.46 },
-            { Density: 5.0, L: 13.3, M: 19.14, H: 33.9 },
-            { Density: 6.0, L: 14.23, M: 20.26, H: 35.58 },
-            { Density: 7.0, L: 14.79, M: 21.39, H: 37.83 },
-            { Density: 8.0, L: 15.54, M: 22.33, H: 39.14 },
-            { Density: 9.0, L: 16.29, M: 23.26, H: 40.64 },
-            { Density: 10.0, L: 16.85, M: 24.2, H: 41.95 },
-            { Density: 20.0, L: 20.97, M: 29.83, H: 50.75 },
-            { Density: 30.0, L: 23.97, M: 33.96, H: 56.93 },
-            { Density: 40.0, L: 26.4, M: 37.52, H: 61.42 },
-            { Density: 50.0, L: 28.28, M: 40.71, H: 65.17 },
-            { Density: 60.0, L: 30.34, M: 43.71, H: 68.35 },
-            { Density: 70.0, L: 31.84, M: 46.72, H: 71.54 },
-            { Density: 80.0, L: 33.33, M: 49.53, H: 74.16 },
-            { Density: 90.0, L: 34.64, M: 52.53, H: 76.59 },
-            { Density: 100.0, L: 35.77, M: 55.35, H: 78.46 }
+        "2-Block Cracking": [
+            { Density: 0.1, L: 0.00, M: 0.00, H: 0.00 },
+            { Density: 0.2, L: 0.00, M: 0.00, H: 1.50 },
+            { Density: 0.3, L: 0.00, M: 0.00, H: 2.20 },
+            { Density: 0.4, L: 0.00, M: 0.00, H: 2.70 },
+            { Density: 0.5, L: 0.00, M: 0.00, H: 3.30 },
+            { Density: 0.6, L: 0.00, M: 1.00, H: 4.00 },
+            { Density: 0.7, L: 0.00, M: 1.50, H: 4.50 },
+            { Density: 0.8, L: 0.00, M: 2.00, H: 5.00 },
+            { Density: 0.9, L: 0.00, M: 2.50, H: 5.50 },
+            { Density: 1.0, L: 0.00, M: 3.00, H: 6.00 },
+            { Density: 2.0, L: 2.00, M: 6.00, H: 12.00 },
+            { Density: 3.0, L: 3.00, M: 15.60, H: 16.00 },
+            { Density: 4.0, L: 4.00, M: 8.00, H: 18.00 },
+            { Density: 5.0, L: 5.00, M: 10.00, H: 21.00 },
+            { Density: 6.0, L: 6.00, M: 11.50, H: 22.00 },
+            { Density: 7.0, L: 6.50, M: 12.00, H: 24.00 },
+            { Density: 8.0, L: 7.00, M: 14.00, H: 26.00 },
+            { Density: 9.0, L: 7.50, M: 15.00, H: 28.00 },
+            { Density: 10.0, L: 8.00, M: 16.00, H: 30.00 },
+            { Density: 20.0, L: 13.00, M: 22.00, H: 43.00 },
+            { Density: 30.0, L: 16.00, M: 27.00, H: 48.00 },
+            { Density: 40.0, L: 18.00, M: 31.00, H: 54.00 },
+            { Density: 50.0, L: 20.00, M: 44.00, H: 58.00 },
+            { Density: 60.0, L: 22.00, M: 46.00, H: 62.00 },
+            { Density: 70.0, L: 24.00, M: 48.00, H: 66.00 },
+            { Density: 80.0, L: 25.00, M: 50.00, H: 68.00 },
+            { Density: 90.0, L: 26.00, M: 52.00, H: 70.00 },
+            { Density: 100.0, L: 28.00, M: 53.00, H: 72.00 }
         ],
         "3-Edge cracking": [
             { "Density": 0.1, "L": 0, "M": 4, "H": 7 },
@@ -618,7 +618,24 @@ function Calculate_Maximum_CDV(){
     PopulatePCITable(Max_CDV);
    
 }
+// Function to download data from Flexible Pavement Condition Data Sheet
+function downloadDataAsExcel() {
+    const table = document.getElementById("dynamicTable");
+    const rows = Array.from(table.querySelectorAll("tr"));
+    const data = rows.map(row => {
+        return Array.from(row.querySelectorAll("td, th")).map(cell => cell.textContent.trim());
+    });
 
+    const worksheet = XLSX.utils.aoa_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Flexible Pavement Data");
+
+    // Download the Excel file
+    XLSX.writeFile(workbook, "Flexible_Pavement_Data.xlsx");
+}
+
+// Add an event listener for the download button
+document.getElementById("downloadExcel").addEventListener("click", downloadDataAsExcel);
 // Function to create PCI rating blocks for ASTM and FAA
 function generatePCIRatings(astmRatings, faaRatings) {
     
@@ -676,7 +693,7 @@ function generatePCIRatings(astmRatings, faaRatings) {
     document.getElementById('faa-column').innerHTML = '<h3>Scale 2 Ratings</h3>';
 
     const totalHeight = 500; // Total height for scaling (in pixels)
-    // Calculate the scale factor for common height
+    //  the scale factor for common height
      const scaleFactorASTM = totalHeight / 100; // Scale factor for ASTM ratings
      const scaleFactorFAA = totalHeight / 100;  // Scale factor for FAA ratings
 
@@ -857,7 +874,7 @@ function populateCDVTable(Individual_DVs, m) {
         rowNum++;
     }
 
-    //Calculate CDV for each row from curve in excel with sheet name = "CDV_AC"
+    // CDV for each row from curve in excel with sheet name = "CDV_AC"
     for(let i =0; i < q_array.length; i++)
     {
         //const distressType = row.querySelector('select').value;
