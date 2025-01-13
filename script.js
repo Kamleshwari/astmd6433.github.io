@@ -179,7 +179,7 @@ function ReadCurveData() {
             { Density: 90.00, L: 72.07, M: 83.05, H: 100.00 },
             { Density: 100.00, L: 74.86, M: 84.17, H: 100.00 }
         ],
-        "2-Block cracking": [
+        "1-Block cracking": [
             { Density: 0.1, L: 0.00, M: 0.00, H: 0.00 },
             { Density: 0.2, L: 0.00, M: 0.00, H: 1.50 },
             { Density: 0.3, L: 0.00, M: 0.00, H: 2.20 },
