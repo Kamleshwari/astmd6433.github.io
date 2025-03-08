@@ -558,17 +558,17 @@ function LinearInterpolation(densities, values, density) {
     return result;
 }
 
-function Count_DV_GreaterThan_Five(DVs) {
-    let count5 = 0;
+function Count_DV_GreaterThan_Two(DVs) {
+    let count2 = 0;
     for(let i = 0; i< DVs.length; i++)
     {
-        if(DVs[i] > 5.0)
+        if(DVs[i] > 2.0)
         {
-            count5++;
+            count2++;
         }
     }
 
-    return count5;
+    return count2;
 }
 
 function Sum_Array(DVs) {
@@ -593,16 +593,16 @@ function Calculate_Maximum_CDV(){
 
     });
 
-    const CountFives = Count_DV_GreaterThan_Five(Individual_DVs);
+    const CountTwos = Count_DV_GreaterThan_Two(Individual_DVs);
 
-    if(CountFives <= 1)
+    if(CountTwos <= 1)
     {
         Max_CDV = Sum_Array(Individual_DVs);
     }
     else
     {
         const HDV = Math.max(...Individual_DVs); //Highest DV
-        let m = 1 + (9.0/95.0)*(100.0-HDV); //maximum allowable number of distresses less or equal to 10
+        let m = 1 + (9.0/98.0)*(100.0-HDV); //maximum allowable number of distresses less or equal to 10
 
         // Ensure m has a maximum value of 10
         m = Math.min(m, 10);
@@ -843,7 +843,7 @@ function populateCDVTable(Individual_DVs, m) {
     let q_array = [];
     let CDV_array = [];
 
-    q = Count_DV_GreaterThan_Five(Entered_DVs);
+    q = Count_DV_GreaterThan_Two(Entered_DVs);
 
     rowNum = 0;
     while(q!=0)
@@ -860,17 +860,17 @@ function populateCDVTable(Individual_DVs, m) {
         InsertOneDataIntoTable(tableBody, total, rowNum, 11);
         InsertOneDataIntoTable(tableBody, q, rowNum, 12);
                 
-        let New_Five_Replaced_DVs  = Replace_Smallest_Value_Greater_Than5(Entered_DVs);
+        let New_Two_Replaced_DVs  = Replace_Smallest_Value_Greater_Than2(Entered_DVs);
         for(let i = 0; i<no_of_Dv_entries; i++){
-            if(Entered_DVs.length == New_Five_Replaced_DVs.length){
-                Entered_DVs[i] = New_Five_Replaced_DVs[i];
+            if(Entered_DVs.length == New_Two_Replaced_DVs.length){
+                Entered_DVs[i] = New_Two_Replaced_DVs[i];
             }
             else{
                 alert("Not same length of array after replacement!");
             }
         }
 
-        q = Count_DV_GreaterThan_Five(Entered_DVs);
+        q = Count_DV_GreaterThan_Two(Entered_DVs);
         rowNum++;
     }
 
@@ -911,13 +911,13 @@ function populateCDVTable(Individual_DVs, m) {
     return Max_CDV;
 }
 
-function Replace_Smallest_Value_Greater_Than5(Entered_DVs){
+function Replace_Smallest_Value_Greater_Than2(Entered_DVs){
 
-    let minGreaterThan5 = Math.min(...Entered_DVs.filter(value => value > 5));
+    let minGreaterThan2 = Math.min(...Entered_DVs.filter(value => value > 2));
 
     for(let i = Entered_DVs.length-1; i>=0; i--){
-        if(Entered_DVs[i]==minGreaterThan5){
-            Entered_DVs[i] = 5.0;
+        if(Entered_DVs[i]==minGreaterThan2){
+            Entered_DVs[i] = 2.0;
         }
     }
 
